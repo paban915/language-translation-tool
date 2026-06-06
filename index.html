@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Language Translation Tool</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <i class="ti ti-language"></i>
+      <div>
+        <h1>Language Translator</h1>
+        <p>Powered by Claude AI — supports 30+ languages</p>
+      </div>
+    </div>
+
+    <!-- Language Selector Bar -->
+    <div class="lang-bar">
+      <select id="srcLang">
+        <option value="auto">Detect language</option>
+        <option value="English">English</option>
+        <option value="Bengali">Bengali</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Italian">Italian</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Dutch">Dutch</option>
+        <option value="Russian">Russian</option>
+        <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+        <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Korean">Korean</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Turkish">Turkish</option>
+        <option value="Vietnamese">Vietnamese</option>
+        <option value="Thai">Thai</option>
+        <option value="Polish">Polish</option>
+        <option value="Ukrainian">Ukrainian</option>
+        <option value="Swedish">Swedish</option>
+        <option value="Greek">Greek</option>
+        <option value="Hebrew">Hebrew</option>
+        <option value="Indonesian">Indonesian</option>
+        <option value="Persian">Persian</option>
+        <option value="Swahili">Swahili</option>
+      </select>
+
+      <button class="swap-btn" id="swapBtn" title="Swap languages">
+        <i class="ti ti-arrows-left-right"></i>
+      </button>
+
+      <select id="tgtLang">
+        <option value="Bengali">Bengali</option>
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Italian">Italian</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Dutch">Dutch</option>
+        <option value="Russian">Russian</option>
+        <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+        <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Korean">Korean</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Turkish">Turkish</option>
+        <option value="Vietnamese">Vietnamese</option>
+        <option value="Thai">Thai</option>
+        <option value="Polish">Polish</option>
+        <option value="Ukrainian">Ukrainian</option>
+        <option value="Swedish">Swedish</option>
+        <option value="Greek">Greek</option>
+        <option value="Hebrew">Hebrew</option>
+        <option value="Indonesian">Indonesian</option>
+        <option value="Persian">Persian</option>
+        <option value="Swahili">Swahili</option>
+      </select>
+    </div>
+
+    <!-- Text Panels -->
+    <div class="panels">
+      <!-- Source Panel -->
+      <div class="panel">
+        <div class="panel-label">Source Text</div>
+        <textarea id="inputText" placeholder="Type or paste text here..." maxlength="5000"></textarea>
+        <div class="panel-footer">
+          <span class="char-count" id="charCount">0 / 5000</span>
+          <div class="action-row">
+            <button class="icon-btn" id="clearBtn" title="Clear">
+              <i class="ti ti-eraser"></i>
+            </button>
+            <button class="icon-btn" id="speakSrcBtn" title="Listen">
+              <i class="ti ti-volume"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div class="panel">
+        <div class="panel-label">
+          Translation
+          <span id="detectedBadge"></span>
+        </div>
+        <div class="output-text" id="outputText">
+          <span class="placeholder">Translation appears here</span>
+        </div>
+        <div class="panel-footer">
+          <span class="char-count" id="outCount"></span>
+          <div class="action-row">
+            <button class="icon-btn" id="copyBtn" title="Copy">
+              <i class="ti ti-copy"></i>
+            </button>
+            <button class="icon-btn" id="speakTgtBtn" title="Listen">
+              <i class="ti ti-volume"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Translate Button -->
+    <button class="translate-btn" id="translateBtn">
+      <i class="ti ti-language"></i>
+      Translate
+    </button>
+
+    <div class="status-bar" id="statusBar"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
